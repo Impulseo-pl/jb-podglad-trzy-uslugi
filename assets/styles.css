@@ -785,3 +785,27 @@ h1,h2,.hf-title{text-wrap:balance}
 /* Piguleczki z miejscowosciami mialy 6,7 px odstepu w pionie - tekst przyklejony do obwodki.
    Wieksze pole to tez wygodniejszy cel palca na telefonie. */
 .area-chips span{padding:.72rem 1.05rem}
+/* 4) Podpisy w galerii wisialy na roznych wysokosciach, bo jeden lamal sie na dwie linie.
+   Rownanie do dolu daje spokojny rzad. */
+.gallery-masonry .m-tile .cap{min-height:5.4rem;display:flex;flex-direction:column;justify-content:flex-end}
+
+/* ====== OPINIE Z GOOGLE 2026-08-08 ==============================================
+   Dowod spoleczny, ktorego strona dotad nie pokazywala. Ocena podana zgodnie ze stanem
+   (4,7 z 12), cytaty 1:1 z profilu, link do zrodla - klient moze zweryfikowac. */
+.opinie{background:var(--paper)}   /* nie paper-2: nastepna sekcja (proces) juz je ma */
+.op-ocena{display:flex;align-items:center;justify-content:center;gap:var(--space-4);
+  flex-wrap:wrap;margin-bottom:var(--space-8)}
+.op-gwiazdki{display:inline-flex;gap:2px;color:#E8A33D;line-height:0}
+.op-liczba{font-family:var(--font-display);font-weight:800;font-size:clamp(1.6rem,1.2rem + 1.2vw,2.2rem);
+  color:var(--ink);line-height:1}
+.op-zrodlo{color:var(--muted);font-size:var(--text-sm)}
+.op-lista{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:var(--space-5)}
+.op-karta{background:#fff;border:var(--hairline);border-radius:var(--r-md);
+  padding:var(--space-7) var(--space-6);margin:0;display:flex;flex-direction:column;gap:var(--space-5)}
+.op-karta blockquote{margin:0;color:var(--ink);font-size:var(--text-base);line-height:1.6}
+.op-karta blockquote::before{content:"";display:block;width:26px;height:2px;
+  background:var(--accent);margin-bottom:var(--space-4)}
+.op-karta figcaption{margin-top:auto;font-weight:600;font-size:var(--text-sm);color:var(--ink)}
+.op-karta figcaption small{display:block;font-weight:400;color:var(--muted);
+  font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+/* ====== koniec OPINIE ====== */
