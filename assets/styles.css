@@ -841,3 +841,8 @@ h1,h2,.hf-title{text-wrap:balance}
    gora i dol. Efekt: przezroczysty jasny pas nad i pod hero, ktory wygladal jak dziura
    w ukladzie (wada obecna od czerwca). Hero ma przylegac do menu i do paska hasel. */
 .hero-fach{padding-block:0}
+/* Siatki z CZTEREMA kaflami ukladaly sie 3 + 1 - czwarty zostawal sam, obok pustka.
+   Wymuszamy cztery kolumny na szerokim ekranie, potem 2 i 1. */
+.svc-grid.kol-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1080px){.svc-grid.kol-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.svc-grid.kol-4{grid-template-columns:1fr}}
