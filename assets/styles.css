@@ -809,3 +809,35 @@ h1,h2,.hf-title{text-wrap:balance}
 .op-karta figcaption small{display:block;font-weight:400;color:var(--muted);
   font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
 /* ====== koniec OPINIE ====== */
+
+
+/* ====== PASEK HASEL wg standardu stron docelowych (08.08.2026) ==================
+   Bylo: chuda linijka hasel rozdzielonych kropkami, ktora tonela w powietrzu sasiednich
+   sekcji (K.: "ta pusta przestrzen"). Jest: piec kolumn obok siebie, kazda z krotkim
+   haslem i dopiskiem, rozdzielone pionowa kreska w kolorze akcentu, tekst wysrodkowany,
+   marginesy boczne wezsze niz reszta strony. */
+.fach-promise{padding-block:0}
+.fach-promise .wrap{width:min(96%,1440px);padding-block:var(--space-7)}
+.fp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:stretch}
+.fp-item{display:flex;flex-direction:column;justify-content:center;gap:var(--space-2);
+  text-align:center;padding:var(--space-3) var(--space-4)}
+.fp-item + .fp-item{border-left:2px solid var(--accent)}
+.fp-item .k{font-family:var(--font-display);font-weight:800;letter-spacing:-.01em;
+  font-size:clamp(1.05rem,.9rem + .55vw,1.45rem);color:var(--ink);line-height:1.15}
+.fp-item .v{font-size:var(--text-sm);color:var(--muted);line-height:1.4}
+@media(max-width:900px){
+  .fp-grid{grid-template-columns:repeat(2,1fr);row-gap:var(--space-6)}
+  .fp-item + .fp-item{border-left:none}
+  .fp-item:nth-child(even){border-left:2px solid var(--accent)}
+  .fp-item:last-child{grid-column:1 / -1}          /* piate nie zostaje sierota z boku */
+}
+@media(max-width:400px){
+  .fp-grid{grid-template-columns:1fr;row-gap:var(--space-5)}
+  .fp-item:nth-child(even){border-left:none}
+  .fp-item + .fp-item{border-top:2px solid var(--accent);padding-top:var(--space-5)}
+}
+/* ====== koniec PASEK HASEL ====== */
+/* Sekcja hero nie ma wlasnego tla, a globalna regula dawala KAZDEJ sekcji 115 px odstepu
+   gora i dol. Efekt: przezroczysty jasny pas nad i pod hero, ktory wygladal jak dziura
+   w ukladzie (wada obecna od czerwca). Hero ma przylegac do menu i do paska hasel. */
+.hero-fach{padding-block:0}
